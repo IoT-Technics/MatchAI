@@ -1,2 +1,22 @@
 # MatchAI
-AI-powered recruitment platform
+
+Production-ready monorepo scaffold.
+
+## Applications
+- apps/web      -> Next.js frontend
+- apps/api      -> FastAPI backend
+- apps/worker   -> Background AI workers
+
+## Packages
+- ai
+- auth
+- database
+- shared
+- ui
+
+## Infrastructure
+- Docker
+- Nginx
+
+## Start (after implementation)
+docker compose up --build
