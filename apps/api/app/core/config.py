@@ -14,6 +14,10 @@ class Settings(BaseSettings):
     host: str = "0.0.0.0"
     port: int = 8000
 
+    database_url: str = (
+        "postgresql+psycopg://matchai:matchai@localhost:5432/matchai"
+    )
+
     model_config = SettingsConfigDict(
         env_file=".env",
         case_sensitive=False,

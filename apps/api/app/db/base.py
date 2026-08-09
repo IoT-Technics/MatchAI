@@ -1,5 +1,4 @@
-"""
-Base package for SQLAlchemy.
+from sqlalchemy.orm import DeclarativeBase
 
-Will be extended in Commit 2.
-"""
+class Base(DeclarativeBase):
+    pass
