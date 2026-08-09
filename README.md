@@ -1,4 +1,5 @@
 # MatchAI
+***Copyright and Founder Sandrine Riche & Robert Eder***
 
 Production-ready monorepo scaffold.
 
