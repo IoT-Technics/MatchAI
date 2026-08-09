@@ -1,0 +1,15 @@
+[project]
+name = "matchai-api"
+version = "0.1.0"
+description = "MatchAI Backend API"
+requires-python = ">=3.12"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.black]
+line-length = 100
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
