@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timezone
 from enum import Enum
 
 from sqlalchemy import Boolean, DateTime, String
@@ -11,6 +11,11 @@ class UserRole(str, Enum):
     CANDIDATE = "candidate"
     COMPANY = "company"
     ADMIN = "admin"
+
+
+def utc_now() -> datetime:
+    """Return the current UTC timestamp."""
+    return datetime.now(timezone.utc)
 
 
 class User(Base):
@@ -53,9 +58,12 @@ class User(Base):
     created_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True),
         nullable=False,
+        default=utc_now,
     )
 
     updated_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True),
         nullable=False,
+        default=utc_now,
+        onupdate=utc_now,
     )

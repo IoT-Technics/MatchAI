@@ -1,13 +1,9 @@
 from fastapi import FastAPI
 
+from app.api.auth import router as auth_router
 from app.api.health import router as health_router
 from app.core.config import settings
 
-from app.db.base import Base
-
-from app.db.session import engine
-
-Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
     title=settings.app_name,
@@ -16,8 +12,14 @@ app = FastAPI(
     redoc_url="/redoc",
 )
 
+
 app.include_router(
     health_router,
+    prefix=settings.api_prefix,
+)
+
+app.include_router(
+    auth_router,
     prefix=settings.api_prefix,
 )
 
