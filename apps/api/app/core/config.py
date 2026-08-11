@@ -18,6 +18,10 @@ class Settings(BaseSettings):
         "postgresql+psycopg://matchai:matchai@localhost:5432/matchai"
     )
 
+    jwt_secret_key: str = "CHANGE-ME-IN-ENV"
+    jwt_algorithm: str = "HS256"
+    access_token_expire_minutes: int = 30
+
     model_config = SettingsConfigDict(
         env_file=".env",
         case_sensitive=False,
